@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "User Details";
+}
+
+@model IEnumerable<MVCClient.Models.UserInfoModel>
+
+
+<div class="row">
+    <h2>View and Add Users</h2>
+</div>
+
+<div id ="useredit" class="row">
+    @Html.Partial("AddUserInfo", new MVCClient.Models.UserInfoModel())
+</div>
+
+<div id="userhistory" class="row">
+    @Html.Partial("UserHistory", Model)
+</div>

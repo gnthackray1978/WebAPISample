@@ -1,0 +1,59 @@
+﻿@model MVCClient.Models.UserInfoModel
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Data Entry</legend>
+        
+
+        <div class="userentry">
+
+            <b>User Data</b>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Id)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Id, new { disabled = "disabled" })               
+            </div>
+
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.FirstName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DateOfBirth)
+            </div>
+            <div class="editor-field">
+                @*@Html.EditorFor(model => model.DateOfBirth)*@
+                @Html.TextBoxFor(m => m.DateOfBirth, "{0:yyyy-MM-dd}", new { @type = "date" })
+                @Html.ValidationMessageFor(model => model.DateOfBirth)
+            </div>
+
+            <p>
+                <br/>
+                <input type="submit" id="save" value="Save"/>
+                <input type="submit" id="new" value="New"/>
+                <input type="submit" id="delete" value="Delete" />
+            </p>
+        </div>
+
+
+    </fieldset>
+}
+

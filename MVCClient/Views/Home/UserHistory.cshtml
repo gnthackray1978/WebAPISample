@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MVCClient.Models.UserInfoModel>
+
+<fieldset>
+    <legend>History:</legend>
+
+    <table class="pure-table userhistorytable">
+
+        <thead>
+        <tr>
+
+            <th>
+                <b>@Html.DisplayNameFor(m => m.Id)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(m => m.FirstName)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(m => m.LastName)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(m => m.DateOfBirth)</b>
+            </th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>
+                        <b><a href="" data-id ="@i.Id" class ="edituser">@i.Id</a></b>
+                    </td>
+                    <td>
+                        <b>@Html.DisplayFor(m => i.FirstName)</b>
+                    </td>
+                    <td>
+                        <b>@Html.DisplayFor(m => i.LastName)</b>
+                    </td>
+                    <td>
+                        <b>@Html.DisplayFor(m => i.DateOfBirth)</b>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</fieldset>
